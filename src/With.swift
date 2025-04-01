@@ -39,7 +39,7 @@ fileprivate enum WithBuilder<T> {
 /// }
 /// ```
 ///
-/// Usage 1# | Initalization, setting properties, assigning the returning instance.:
+/// Usage 1# | Initalization, setting properties with tuple syntax, assigning the returning instance.
 /// ```
 /// let akos = with(Person()) {
 ///     (\.name, "Akos")
@@ -47,7 +47,7 @@ fileprivate enum WithBuilder<T> {
 /// }
 /// ```
 ///
-/// Usage 2# | Passing in an instance, setting properties, assigning the returning instance.:
+/// Usage 2# | Passing in an instance, setting properties with tuple syntax, assigning the returning instance.
 /// ```
 /// var akos = Person()
 /// akos = with(akos) {
@@ -56,7 +56,15 @@ fileprivate enum WithBuilder<T> {
 /// }
 /// ```
 ///
-/// Usage 3# | Not assigning the returning instance:
+/// Usage 3# | Setting properties with custom operator syntax. Feel free to define your own operator if you don't like this one.
+/// ```
+/// with(Person()) {
+///    \.name ~> "Akos"
+///    \.age ~> 32
+/// }
+/// ```
+///
+/// Usage N# | Not assigning the returning instance:
 /// ``TODO: Add example``
 ///
 @discardableResult
