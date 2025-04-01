@@ -1,2 +1,37 @@
 # SwiftScopeFunctions
-A KeyPath based collection of scope functions in Swift. Inspired by Kotlin.
+A KeyPath, parameter pack and result builder based collection of scope functions in Swift. Inspired by Kotlin.
+
+## Reference
+Kotlin docs: https://kotlinlang.org/docs/scope-functions.html
+TODO: add all the references where the problem is discussed, explain context receivers and other concepts.
+
+## With
+Currently only the `with` function is implemented. Kotlin reference: https://kotlinlang.org/docs/scope-functions.html#with
+
+### Usage
+Unlike other options available in Swift in public repositories, the `with` function of this repo is 
+1. Implemented using `WritableKeyPaths`, `parameter packs` and a `result builder` which makes this implementation full type safe and easy to use. 
+2. Can be used with any type that has KeyPath support. TODO: provide examples for this. struct, class, actor, enum, tuple etc.
+3. Is Swift 6 compatible.
+
+Syntax:
+ 
+```swift
+struct Person {
+    var name: String?
+    var age: Int?
+}
+
+let akos = with(Person()) {
+    (\.name, "Akos")
+    (\.age, 32)
+}
+```
+
+
+## Future
+In the future it is planned to add all the other scope functions of Kotlin, although their characteristics are quite different from `with`.
+
+## Alternatives
+List of other alternatives in Swift's open source community:
+TODO: add the list of alternatives
