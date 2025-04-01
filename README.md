@@ -14,7 +14,23 @@ Unlike other options available in Swift in public repositories, the `with` funct
 2. Can be used with any type that has KeyPath support. TODO: provide examples for this. struct, class, actor, enum, tuple etc.
 3. Is Swift 6 compatible.
 
-Syntax:
+There are two different ways to use the `with` function of this repo. With a custom operator `~>` (users are encouraged to change the custom operator to their taste), or with regular tuple syntax.
+
+#### Custom operator syntax:
+
+```swift
+struct Person {
+    var name: String?
+    var age: Int?
+}
+
+let akos = with(Person()) {
+    \.name ~> "Akos"
+    \.age ~> 32
+}
+```
+
+#### Tuple syntax:
  
 ```swift
 struct Person {
