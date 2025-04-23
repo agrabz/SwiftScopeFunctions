@@ -1,3 +1,5 @@
+This is all exploratory. But if anyone wants to use it then 🤷‍♂️
+
 # SwiftScopeFunctions
 [WIP] A KeyPath, parameter pack and result builder based collection of scope functions in Swift. Inspired by Kotlin.
 
